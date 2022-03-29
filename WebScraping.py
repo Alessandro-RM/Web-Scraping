@@ -55,8 +55,6 @@ hospedagens = site.findAll('div', attrs={'itemprop': 'itemListElement'})
     
 for hospedagem in hospedagens:
 
-    #print(hospedagem.prettify())
-
     hospedagem_descricao = hospedagem.find('meta', attrs={'itemprop': 'name'})
     hospedagem_url = hospedagem.find('meta', attrs={'itemprop': 'url'})
 
@@ -66,7 +64,7 @@ for hospedagem in hospedagens:
     print('Descrição: ', hospedagem_descricao)
     print('URL: ', hospedagem_url)
 
-    hospedagem_detalhes = hospedagem.find('div', attrs={'style': '--margin-bottom:var(--h-x-sf-jw);'})#.findAll('li')
+    hospedagem_detalhes = hospedagem.find('div', attrs={'style': '--margin-bottom:var(--h-x-sf-jw);'})
     print('Detalhes da hospedagem: ', hospedagem_detalhes.text)
 
     preço = hospedagem.findAll('span')[-1].text
